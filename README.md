@@ -1,5 +1,6 @@
 # TEZOS_ICO_PASSWORD_RECOVERY_TOOL
 Tool to recover Tezos ICO password if parts of the password are known or guessable 
+
 The methods how passwords are created vary from person to person. Never the less in discussions with colleagues, friends and family, I found that everyone has a typical way to create password. Although everyone also thinks his method is unique, I found that there is for most persons a similar pattern how passwords are created. As I could not find any wordlist generator which reflected this way of creating passwords, I tied to create a wordlist generator on my own. The primary goal of this program is to create a wordlist which is as short as possible to minimize brute-force attempts to recover passwords. This program is not brute-forcing itself, it is simply a tool which creates a wordlist which can be provided to brute forcing programs such a “John The Ripper”.
 
 How are passwords created:
