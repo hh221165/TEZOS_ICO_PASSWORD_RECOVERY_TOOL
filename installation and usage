@@ -24,6 +24,7 @@ to import it and continue coding if someone wants to.
 
 
 2. Installation on Windows 10:
+(Apple and Linux not tested)
 
 Install Python for Windows x86-64 from https://www.python.org/downloads/windows/ 
 (select add Python 3.7 to PATH)
