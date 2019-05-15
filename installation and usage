@@ -112,10 +112,10 @@ all used characters of Component 2 into this section which is “etcbatgo” and
 “capitalize all” instead of using the default values in component 2, then you will get about 
 15 million PWD candidates and a calculation time of about 3 hours on my computer.
 
-There is absolutely no backup of the “status” implemented in the tool. This means if 
-your computer crashes, your process crashes, you need to interrupt the process or any other 
-reason that stops the process, then you will have to start over again. There is no way to find 
-out at which point the process ended.
+There is absolutely no backup of the “status” implemented in the tool. The only thing which is 
+saved, is the found password if any was found.This means if your computer crashes, your process 
+crashes, you need to interrupt the process or any other reason that stops the process, then 
+you will have to start over again. There is no way to find out at which point the process ended.
 
 In general the “Status” display could be improved a lot. As hashing is done with a starmap 
 function in a process pool, it is not so easy to setup proper communication between main and 
