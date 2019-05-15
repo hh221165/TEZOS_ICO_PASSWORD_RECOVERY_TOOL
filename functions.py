@@ -254,6 +254,7 @@ def check(password,email, mnemonic, address, iters = 2048):
         print("Your password is: ", password)
         with open("password.lst", 'a') as z:
             z.write((password) + '\n')
+            z.close()
 
 
     else:
