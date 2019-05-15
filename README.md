@@ -1,6 +1,20 @@
 # TEZOS_ICO_PASSWORD_RECOVERY_TOOL
 Tool to recover Tezos ICO password if parts of the password are known or guessable 
 
+Donations welcome: tz1dBY6SeETnveGf9H2ThvYscV4RtzvAvaUf
+
+When I first heard that people forgot their ICO Password in 2017, I had to chuckle as I could not imagine how that can happen. After the mainnet launch the smile certainly drained my face after I tried several passwords without success. In the following several months I made multiple attempts to find a solution to recover my password. I have played with John The Ripper in combination with Crunch, Andrea Pizzato solution from Github and several others without success. 
+I was absolutely sure I created the password in a pattern that I usually use to create my passwords but I just couldn’t find a tool which was reflecting this pattern.
+Although the invested amount was not a dramatic loss, I got so annoyed about my stupidity, that I decided to learn how to program good enough, to being able to create a tool on my own which reflects the pattern of password creation that I usually use. So, several months ago I started to learn programming in Python and created a tool which did the trick for me. As I am a lazy guy, I decided to do it in a way to have a user interface to enter the Data needed. I just didn’t want to fiddle around with command line entries. Although the tool is not fully finished and has several limitations, I could not believe my eyes last Sunday when it suddenly displayed “Your password is – “…………………”. The password is 20 characters and consists of 5 different components where each component could have been multiple different options. Due to the advice on the wallet creation page during ICO to use an absolute unique password, I obviously decided to vary one of the components, and did not write it down. With the tool I created I checked several hundred million different combinations before I succeeded. On My computer which is a Windows Six Core machine with 32 GB of RAM, I could check about 1.700 different passwords per second using multiprocessing. 
+My funds are meanwhile recovered and transferred to a Trezor Hardware wallet.
+Although I know that my code is far from perfect, could be improved a lot and could also be extended with features, I decided to put it on Github for download. Maybe it helps someone else as well. Maybe someone even knows how to get the code running on the GPU (I tried but failed miserably) which should increase the hash -rate significantly. In this case the brute forcing of parts of the password might get much better and stable. In this case I even would consider to put some more efforts in, just for fun.  
+If you are successful with it, I would be happy if you let me know. And of course, feel free to donate to my TEZOS donation wallet if you recovered your password successfully and think that I deserve some gratitude for my efforts.
+Wallet Address: tz1dBY6SeETnveGf9H2ThvYscV4RtzvAvaUf
+
+If you think my code is crap, that is fine too. As said, I learned how to code because of a need for it. Although I am a technician, the last time I programmed something seriously is about 30 years ago in Commodore Basic and Assembler on a C64. 
+
+######################################
+
 The methods how passwords are created vary from person to person. Never the less in discussions with colleagues, friends and family, I found that everyone has a typical way to create password. Although everyone also thinks his method is unique, I found that there is for most persons a similar pattern how passwords are created. As I could not find any wordlist generator which reflected this way of creating passwords, I tied to create a wordlist generator on my own. The primary goal of this program is to create a wordlist which is as short as possible to minimize brute-force attempts to recover passwords. This program is not brute-forcing itself, it is simply a tool which creates a wordlist which can be provided to brute forcing programs such a “John The Ripper”.
 
 How are passwords created:
