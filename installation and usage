@@ -1,0 +1,125 @@
+1. Introduction
+2. Installation
+3. How to use
+4. Limitations
+
+1. Introduction
+
+This tool was created out of pure pain about my own stupidity.
+If you want to use this tool feel free to do so at your own risk. 
+It worked for me, but I cannot guarantee that it will work for you as well. 
+If you want to modify the code feel free to do so. If you know how to improve 
+the code please feel free to do so and let me know, as I would like to learn 
+more about python.
+
+Most of the code is created by myself. 
+Never the less, as I had to learn how to code I needed to play around with lots 
+of existing code. Unfortunately, I cannot recall most of the sites I have visited 
+to analyze existing code.
+What I copied more or less from other code is the hashing functions which I took 
+from Arthur Breitman’s fundraiser tools and modified it to my needs.
+
+The tool is created with PyQt5 and pycharm. All necessary files are included 
+to import it and continue coding if someone wants to.
+
+
+2. Installation on Windows 10:
+
+Install Python for Windows x86-64 from https://www.python.org/downloads/windows/ 
+(select add Python 3.7 to PATH)
+
+Copy the scripts and folder structur to a folder on your computer
+Open a command window and navigate to the folder
+
+Import the necessary libraries:
+pip install qtpy
+pip install PyQt5
+
+install bitcoin library which is part of this solution. If you use standard 
+pip installation execution of the SW, “bin_to_b58check” included in “y3specials.py “, 
+will fail. If you have bitcoin installed already simple replace the bitcoin folder with 
+the one included in this distribution (make a backup of your version)
+
+pip install pysodium
+
+copy libsodium.dll (located in Folder dll) to your sytem32 folder
+
+Next part is needed to install pyblake2:
+install Microsoft Visual C++ 14.0 
+(the easiest is to install Microsoft Visual Studio community edition)
+https://visualstudio.microsoft.com/downloads/ . 
+Install Desktop development with C++
+ 
+Restart system (just to be sure)
+
+pip install pyblake2
+
+In your command window navigate to your created Folder and execute “python Main.py”
+
+3. How to use:
+
+Once started the GUI is pre-filled with test data which should give you a result 
+within a view minute. Play a bit around with the different options before you enter 
+your own parameters. To be totally safe work offline.
+
+Pre-filled test data:
+e-mail address: cujo@outlook.com (don’t send e-mails to this address as I do 
+not know if it belongs to someone)
+
+mnemonic: “grace zebra yard dose flush myself brand apple night start tube flock embody payment marble”
+
+ICO address: “tz1eyb15LvxJC23cBkYNNA84MYkwWmx2JmxJ”
+
+The above parameters are created with the password “$$Ch@rles%%1990ETC!“
+
+You can check the result with the pwcheck_full.htm, that you can
+find at https://github.com/tezos/fundraiser-tools
+
+The default Test Data produce on my computer the following result: 
+63504 usable PWD candidates checked in a total of 37 seconds. Password found and correctly displayed.
+Once you made yourself familiar with the tool make sure to clear all fields and checkboxes.
+
+Fill in your ICO credentials and possible password components. GOOD LUCK!
+
+4. Limitations:
+A progressbar is not implemented.
+The update of the Status display is not done in time. This is due to the way the 
+Script is designed. I was just playing around with pipes and communication between 
+the processes when I found my password. I lost a bit of enthusiasm at the moment 
+to finish it. Maybe I will play around with it in the future to get a correct display 
+in time. Never the less, once the process is fully finished the display is updated 
+correctly. In any case just monitor the command window from where you started the GUI. 
+In case your password is found, it will be displayed immediately in the command window. 
+The hashing time will also be displayed in the command window at the end of the hashing 
+process. The fact that the hashing time is displayed does not mean the process is fully 
+finished. As I am working with Lists, a final List analysis is done after hashing. 
+Anyway. If you see the message time to complete: in the command window and your password 
+is not displayed directly in the line before this message, nothing was found. The process 
+running after that message is just cleaning up the Status message.
+
+The parameters in the lower part of the advanced Tab are highly experimental. 
+If you need to fill in a full alphabet you most likely crash your computer. 
+Especially if you fill in lots of parameters in the individual components and 
+slat sections. In this case billions of potential PWD candidates are created and you 
+will run out of memory. If someone can help me getting the code to the GPU I might invest 
+some more time to change the structure here and create password files to work with instead 
+of lists which are used in the current version. Never the less I made some experiments 
+with limited characters and basically it works as long as there are no Memory limits or 
+Python limits reached. In any case, using this will most likely create hundreds of millions 
+or even billions of PWD Candidates and checking them will take ages. If for example you enter 
+all used characters of Component 2 into this section which is “etcbatgo” and select 
+“capitalize all” instead of using the default values in component 2, then you will get about 
+15 million PWD candidates and a calculation time of about 3 hours on my computer.
+
+There is absolutely no backup of the “status” implemented in the tool. This means if 
+your computer crashes, your process crashes, you need to interrupt the process or any other 
+reason that stops the process, then you will have to start over again. There is no way to find 
+out at which point the process ended.
+
+In general the “Status” display could be improved a lot. As hashing is done with a starmap 
+function in a process pool, it is not so easy to setup proper communication between main and 
+child process. If you want to know if the process is still running, check with task-manger.
+
+The tool uses all available CPUs -1. I decided to do this to leave some calculation capacity 
+for other taskes. Never the less the more you work in parallel, the higher the risk gets to 
+kill the process.
